@@ -5,19 +5,18 @@ let mes=fecha.getMonth()+1;
 let verano=[12,1,2,3,4];
 let invierno=[5,6,7,8,9,10,11];
 
-mes=1
+// mes=1
 if (verano.indexOf(mes)==-1){
     $('#verano').hide()
 }else{
     $('#invierno').hide()
 }
 
-// JSON
+if (verano.indexOf(mes)!=-1){
 let xhr = new XMLHttpRequest();
-xhr.open('GET', 'summer.json', 'winter.json', true);
+xhr.open('GET', 'summer.json', true);
 xhr.response = 'text';
 xhr.send(); 
-
 // Producto de Verano
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -66,10 +65,16 @@ xhr.onload = function() {
         } 
         document.getElementById('tallas').innerHTML = miString4
         // Final info Tallas
-    } // final de if
-
-// Producto de Invierno
-    else {
+    }}} else{
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'winter.json', true);
+        xhr.response = 'text';
+        xhr.send(); 
+        // Producto de Verano
+        xhr.onload = function() {
+        if (xhr.status === 200) {{
+        let miData = JSON.parse(xhr.responseText)
+        console.log(miData);
         for (let i = 0; i < miData.ProductoDeInvierno.length; i++) {
             console.log(miData.ProductoDeInvierno[i].Producto);
             console.log(miData.ProductoDeInvierno[i].Precio);
@@ -113,4 +118,4 @@ xhr.onload = function() {
         document.getElementById('tallasinv').innerHTML = invString4
         // Final info Tallas
     }
-} // final de función
+}}}
