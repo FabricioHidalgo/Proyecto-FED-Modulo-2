@@ -1,15 +1,33 @@
 
 
+
+
 let fecha=new Date();
 let mes=fecha.getMonth()+1;
 let verano=[12,1,2,3,4];
 let invierno=[5,6,7,8,9,10,11];
+let nombre="";
 
-// mes=1
+
+
+
+mes=1
 if (verano.indexOf(mes)==-1){
     $('#verano').hide()
+    
 }else{
     $('#invierno').hide()
+}
+
+while (nombre=="" || nombre==null){
+    nombre=prompt('Ingrese su nombre: ')
+    if(nombre=="" || nombre==null){
+        alert('No se ingreso ningun nombre')
+    }else{
+        alert(`Bienvenido a nuestra pagina ${nombre}`)
+
+    }
+
 }
 
 if (verano.indexOf(mes)!=-1){
