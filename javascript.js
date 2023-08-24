@@ -10,25 +10,21 @@ let nombre="";
 
 
 
-
 mes=1
-if (verano.indexOf(mes)==-1){
-    $('#verano').hide()
+let contador=1;
+
+while(contador<13){
+
+    if (contador==mes && invierno.indexOf(contador)!==-1){
+        $('#verano').hide()
     
-}else{
-    $('#invierno').hide()
-}
-
-while (nombre=="" || nombre==null){
-    nombre=prompt('Ingrese su nombre: ')
-    if(nombre=="" || nombre==null){
-        alert('No se ingreso ningun nombre')
-    }else{
-        alert(`Bienvenido a nuestra pagina ${nombre}`)
-
+    }else if(contador==mes && verano.indexOf(contador)!==-1){
+        $('#invierno').hide()
     }
-
+    contador+=1;
 }
+
+
 
 if (verano.indexOf(mes)!=-1){
 let xhr = new XMLHttpRequest();
