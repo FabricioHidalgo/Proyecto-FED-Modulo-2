@@ -8,6 +8,8 @@ let verano=[12,1,2,3,4];
 let invierno=[5,6,7,8,9,10,11];
 
 mes=1
+
+
 let contador=1;
 
 while(contador<13){
